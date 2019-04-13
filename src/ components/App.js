@@ -8,9 +8,8 @@ class App extends React.Component {
 
     onSearchSubmit = async term => {
         const response = await unsplash
-        .get('/search.json', {
-            params: {query: term,
-                     'api-key': 'Z5H4BriZgokN7rUlhT9hKy3BKcG0GjGP' }            
+        .get('/search/photos', {
+            params: {query: term}            
         });
         this.setState({images: response.data.results});      
     }
